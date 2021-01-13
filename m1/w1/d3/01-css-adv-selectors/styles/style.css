@@ -1,0 +1,30 @@
+#menu > li {
+  /* Only direct descendants - children */
+  color: red;
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+/* Descendants - any amount of levels down */
+ul em {
+  color: red;
+}
+
+#former {
+  background-color: red;
+}
+
+#former + div {
+  background-color: yellow;
+}
+
+#former ~ div {
+  background-color: cornflowerblue;
+}
+
+h1,
+h3,
+div > p {
+  color: blue;
+}

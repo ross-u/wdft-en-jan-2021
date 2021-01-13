@@ -1,0 +1,36 @@
+/* MAKING THE IMAGE RESPONSIVE */
+img {
+  width: 100%;
+  height: auto;
+}
+
+.image-div {
+  margin: 0 auto;
+  width: 80%;
+  height: 500px;
+  border: 2px solid navy;
+
+  background-image: url("https://pbs.twimg.com/media/DbWWZ5_XUAABb6m.jpg");
+  background-repeat: no-repeat; /* don't repeat the image if there is remaining space in the div*/
+  background-size: cover; /* Resize the background image to cover the entire container */
+
+  background-position: center;
+}
+
+/* 
+
+  Common device widths (Generalized - not a set standard)
+
+  XS - 360px w
+
+  SM - 480px w
+
+  MD - 768px w
+
+  LG - 1024px w
+
+  XL - 1440px w
+
+  4K - 2560px w
+
+*/

@@ -1,0 +1,56 @@
+body {
+  background: white;
+}
+
+#test {
+  background: chartreuse;
+  width: 50vw; /* 1vw equals 1% of the viewport width */
+  height: 50vh; /* 1vh equals 1% of the viewport height */
+}
+
+/* MEDIA QUERIES */
+/* Mobile first, we start from the smallest viewport width */
+
+/* From 320px and up/more */
+@media (min-width: 320px) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* From 768px and up */
+@media (min-width: 768px) {
+  body {
+    background-color: green;
+  }
+}
+
+/* From 1024px and up */
+@media (min-width: 1024px) {
+  body {
+    background-color: yellow;
+  }
+}
+
+/* From 1224px and up */
+@media (min-width: 1224px) {
+  body {
+    background-color: orange;
+  }
+}
+
+/* From 1824px and up */
+@media (min-width: 1824px) {
+  body {
+    background-color: aqua;
+  }
+}
+
+/* Custom media Query  from 800px and up, until 900px  */
+@media (min-width: 800px) and (max-width: 900px) {
+  body {
+    background-color: burlywood;
+  }
+}
+
+/* END OF MEDIA QUERIES */
