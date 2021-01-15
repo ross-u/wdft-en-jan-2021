@@ -152,4 +152,7 @@ function bestYearAvg(moviesArr) {
   });
 
   console.log("dict", dict);
+
+  // CONTINUE THE CALCULATION ...
+  // ...
 }
