@@ -20,6 +20,7 @@ function updateClock() {
   const timeNow = `${ concatZero(hours) } : ${concatZero(minutes) } : ${concatZero(seconds) }`;
 
   console.log('timeNow', timeNow);
+  
   // If we want to clear the interval and stop the clock after certain count
   // counter++;
 
