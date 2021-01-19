@@ -1,0 +1,11 @@
+.open {
+  height: 200px;
+  width: 100%;
+  border: 2px solid black;
+  transition: all 1s;
+}
+
+.close {
+  height: 0px;
+  border: 0px solid black;
+}
