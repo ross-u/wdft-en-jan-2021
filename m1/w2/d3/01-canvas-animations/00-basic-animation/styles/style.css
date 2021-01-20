@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#main-canvas {
+  border: 1px solid red;
+  /* visibility: hidden; */
+}
