@@ -31,7 +31,7 @@ createBtn.addEventListener('click', function (event) {
   // Create a new student card element, used to show values from the inputs
   const newCard = document.createElement('div');
 
-  // .innerHTML
+  // Create content of the car using `.innerHTML`
   newCard.innerHTML = `
     <p>
       <span class="name-data"> ${fullNameV} </span> - <span class="program-data">${programV}</span>
@@ -40,7 +40,7 @@ createBtn.addEventListener('click', function (event) {
   `;
 
 /* 
-  // .createElement  .textContent
+  // Create content of the card using  `.createElement`  `.textContent` (takes longer)
   const newP = document.createElement('p');
   const newSpan1 = document.createElement('span');
   const newSpan2 = document.createElement('span');
