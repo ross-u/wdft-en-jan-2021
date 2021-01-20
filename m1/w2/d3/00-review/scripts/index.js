@@ -39,7 +39,7 @@ createBtn.addEventListener('click', function (event) {
     <button class="delete-btn">Delete</button>
   `;
 
-
+/* 
   // .createElement  .textContent
   const newP = document.createElement('p');
   const newSpan1 = document.createElement('span');
@@ -62,7 +62,7 @@ createBtn.addEventListener('click', function (event) {
   //  forming the card content
   newCard.appendChild(newP);
   newCard.appendChild(deleteBtn);
- 
+ */ 
 
   // Add a listener to the new card delete button
   const deleteButton = newCard.querySelector('.delete-btn');
