@@ -2,6 +2,7 @@
 
 class Player {
   constructor(canvas, lives) {
+    this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
 
     this.lives = lives;
@@ -18,9 +19,11 @@ class Player {
     else if (direction === "down") this.direction = 1;
   }
 
-  handleScreenCollision() {
+  updatePosition() {
     this.y = this.y + this.direction * this.speed; // update player's position
+  }
 
+  handleScreenCollision() {
     const screenTop = 0;
     const screenBottom = this.canvas.height;
 
@@ -35,7 +38,29 @@ class Player {
     this.lives -= 1;
   }
 
-  didCollide(enemy) {}
+  didCollide(enemy) {
+    const playerLeft = this.x;
+    const playerRight = this.x + this.size;
+    const playerTop = this.y;
+    const playerBottom = this.y + this.size;
+
+    const enemyLeft = enemy.x;
+    const enemyRight = enemy.x + enemy.size;
+    const enemyTop = enemy.y;
+    const enemyBottom = enemy.y + enemy.size;
+
+    const crossLeft = enemyLeft <= playerRight && enemyLeft >= playerLeft;
+    const crossRight = enemyRight >= playerLeft && enemyRight <= playerRight;
+
+    const crossTop = enemyTop <= playerBottom && enemyTop >= playerTop;
+    const crossBottom = enemyBottom >= playerTop && enemyBottom <= playerBottom;
+
+    if ((crossLeft || crossRight) && (crossTop || crossBottom)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   draw() {
     this.ctx.fillStyle = "#66D3FA";
