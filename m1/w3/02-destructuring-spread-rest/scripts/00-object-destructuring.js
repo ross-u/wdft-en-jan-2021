@@ -10,13 +10,12 @@ const student = {
 // OBJECT DESTRUCTURING
 
 // OLD WAY - extracting values from an object
-
 // const program = student.program; //  student['program']
 // const city = student.city;
 // const age = student.age;
 // const name = student.name;
 
-
+// NEW WAY
 const { program, city, age, name } = student;
 
 
