@@ -8,10 +8,9 @@ const PORT = 3000;
 // Middleware is a function that will run for every request
 // and enable certain access or functionality
 
-// static files middleware
+// static files middleware - serves static files located in the `public` folder
+// automatically handles requests that contain file extension such as .css .jpeg, etc...
 app.use(express.static("public"));
-
-// http://localhost:3000/css/main.css
 
 // SPECIFY THE ENDPOINTS (ROUTES)
 // GET  /
