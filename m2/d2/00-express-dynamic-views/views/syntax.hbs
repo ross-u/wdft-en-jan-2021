@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+   <hr>
+
+  <h3>@first - @last</h3>
+
+
+      <ul>
+
+      {{#each cities}}
+
+        {{#if @first}}
+        <li> FIRST : {{this}}  </li>
+
+        {{else if @last}}
+        <li> LAST : {{this}}  </li>
+
+        {{else}}
+        <li> >>> {{@index}} : {{this}}  </li>
+
+        {{/if}}
+
+      {{/each}}
+
+    </ul>
+
+
+
+
+
+  <hr>
+
+  <h3>Accessing object properties</h3>
+
+
+  <p>{{info.name}}</p>
+  <p>{{info.campus}}</p>
+  <p>{{info.year}}</p>
+
+
+
+
+  <hr>
+
+  <h3>@key</h3>
+
+
+  {{#each info}}
+  <p>{{@key}} - {{this}}</p>
+  {{/each}}
+
+
+
+
+    <hr>
+
+    <h3>@index</h3>
+
+    <ul>
+
+    {{#each cities}}
+      <li> {{@index}} : {{this}}  </li>
+    {{/each}}
+
+    </ul>
+
+
+
+
+
+    <hr>
+
+    <h3>#each - else   Fallback option</h3>
+
+      <ul>
+
+      {{#each countries}}
+        <li> {{this}}  </li>
+      {{else}}
+        <p>No countries yet!</p>
+      {{/each}}
+
+      </ul>
+
+
+
+    <hr>
+
+    <h3>#each</h3>
+
+    <ul>
+
+    {{#each cities}}
+      <li> {{this}}  </li>
+    {{/each}}
+
+    </ul>
+
+
+
+
+
+  <hr>
+
+  <h3>#unless</h3>
+  <h3>#unless will render the block if the value is falsy </h3>
+  <h3>(false, null, undefined, 0, "", [])</h3>
+
+
+  {{#unless address}}
+    <h3>Warning: we can't find the address!</h3>
+  {{/unless}}
+
+
+
+  <hr>
+
+  <h3>#if</h3>
+  <h3>#else</h3>
+
+
+  {{#if address}}
+    <h2>Address: {{address}}</h2>
+  {{else}}
+    <h2>Unable to find the address</h2>
+  {{/if}}
+
+  
+
+  <hr>
+
+  <h3>#if</h3>
+
+
+  {{#if message}}
+  The message is: {{message}}
+  {{/if}}
+
+
+  <hr>
+
+  <p>Hello {{name}}!</p>
+  <p>Welcome to {{bootcamp}}</p>
+
+  <h3>{{htmlStr}}</h3>
+  
+</body>
+</html>

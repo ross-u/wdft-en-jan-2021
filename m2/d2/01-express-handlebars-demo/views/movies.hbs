@@ -1,0 +1,19 @@
+<div>
+  <header>
+    <h2>Movies List</h2>
+  </header>
+
+
+  <main class="cards-container">
+     {{> card favMovie }}   {{!-- if passing a specific value to the partial --}}
+
+
+
+    {{#each movies}}
+
+     {{> card this }}
+
+    {{/each}}
+
+  </main>
+</div>
