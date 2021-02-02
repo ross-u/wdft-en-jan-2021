@@ -1,0 +1,15 @@
+<div>
+  <header>
+    <h2>Launches</h2>
+  </header>
+
+
+  <main class="cards-container">
+    {{#each launches}}
+      <div style="border: 1px solid black; padding: 20px">
+        <h3>Date: {{this.static_fire_date_utc}}</h3>
+        <img src="{{this.links.patch.small}}" alt="">
+      </div>
+    {{/each}}
+  </main>
+</div>
