@@ -31,7 +31,7 @@ app.get('/', (req, res, next) => {
 app.get('/launches', (req, res, next) => {
   // REQUEST TO SPACEX API TO GET DATA
 
-  // spotifyAPI.getTracks()  spotifyAPI.getTrackById()
+  // punkAPI.getBeers()  punkAPI.getRandom()
   fetch('https://api.spacexdata.com/v4/launches')
     .then((response) => {
 
