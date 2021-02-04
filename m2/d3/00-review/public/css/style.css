@@ -1,0 +1,10 @@
+/* CSS RESET */
+
+body {
+  margin: 0;
+  border: 1px solid fuchsia;
+}
+
+html {
+  font-size: 16px;
+}
