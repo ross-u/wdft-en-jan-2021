@@ -1,0 +1,30 @@
+<h2>{{oneBook.title}}</h2>
+<h4>Author: {{oneBook.author}}</h4>
+
+<p>{{oneBook.description}}</p>
+<p>Rating: {{oneBook.rating}}</p>
+
+
+<a href="/books"> Return </a>
+
+
+
+<form action='/reviews/{{oneBook._id}}' method='POST'>
+
+  <label>Name</label>
+  <input type='text' name='name'>
+  <br />
+
+  <label>Comment:</label>
+  <input type='text' name='comments'>
+  <br />
+
+  <button type='submit'>Add Review</button>
+</form>
+
+{{#each oneBook.reviews}}
+  <div style="border: 1px solid blue">
+    <p>{{this.name}}</p>
+    <p>{{this.comments}}</p>
+  </div>
+{{/each}}

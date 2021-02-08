@@ -1,0 +1,20 @@
+<form action='/books/edit/{{oneBook._id}}' method='POST'>
+  
+  <label for="">Title:</label>
+  <input type="text" name="title" value="{{oneBook.title}}">
+	<br>
+
+  <label for="">Author:</label>
+  <input type="text" name="author" value="{{oneBook.author}}">
+	<br>
+
+  <label for="">Description:</label>
+  <input type="text" name="description" value="{{oneBook.description}}">
+	<br>
+
+  <label for="">Rating:</label>
+  <input type="number" name="rating" value="{{oneBook.rating}}">
+	<br>
+
+  <button type="submit">EDIT BOOK</button>
+</form>
