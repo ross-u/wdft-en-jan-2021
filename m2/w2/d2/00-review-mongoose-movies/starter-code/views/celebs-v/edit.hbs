@@ -1,0 +1,15 @@
+<h2>Edit Celebrity</h2>
+
+<form action='/{{oneCeleb._id}}/edit' method='POST'>
+
+ <label for=''>Name</label>
+  <input type='text' name='name' value="{{oneCeleb.name}}">
+
+  <label for=''>Occupation</label>
+  <input type='text' name='occupation' value="{{oneCeleb.occupation}}">
+
+   <label for=''>Catch phrase</label>
+  <input type='text' name='catchPhrase' value="{{oneCeleb.catchPhrase}}">
+
+  <button type='submit'>Submit</button>
+</form>
