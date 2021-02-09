@@ -7,8 +7,12 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
 const indexRouter = require("./routes/index-router");
 const authRouter = require("./routes/auth-router");
+
 
 const app = express();
 
@@ -25,12 +29,27 @@ mongoose
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
+
 // MIDDLEWARE
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+
+// SESSION(COOKIES) MIDDLEWARE
+app.use( session({
+  secret: process.env.SESSION_SECRET,
+  // cookie: { maxAge: 3600000 * 1 },	// 1 hour
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 60 * 60 * 24 * 7 // Time to live - 7 days (14 days - Default)
+  })
+}));
+
 
 // ROUTES
 app.use("/", indexRouter);

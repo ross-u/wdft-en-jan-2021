@@ -1,6 +1,6 @@
 const express = require("express");
 const authRouter = express.Router();
-const User = require('./../models/user-model');
+const User = require('../models/user-model');
 const zxcvbn = require('zxcvbn');
 
 const bcrypt = require("bcrypt");
@@ -95,9 +95,11 @@ authRouter.get('/login', (req, res, next) => {
 // Handle login form data
 // POST     /auth/login
 authRouter.post('/login', (req, res, next) => {
+  // Check if the username and password are provided
   const { username, password } = req.body;
 
   if (username === "" || password === "") {
+    // > if username or password are not provided
     res.render(
       "auth-views/login-form",
       { errorMessage: "Please enter username and password" }
@@ -106,8 +108,10 @@ authRouter.post('/login', (req, res, next) => {
     return;   
   }
 
+  // Check if the username and user exists
   User.findOne({ username })
     .then((user) => {
+      // > if user doesn't exist, show an error
       if (!user) {
         res.render(
           "auth-views/login-form",
@@ -117,15 +121,18 @@ authRouter.post('/login', (req, res, next) => {
         return;   
       }
 
+      // > else if user exists Check the password if correct
       const passwordCorrect = bcrypt.compareSync(password, user.password);
       
-
+      // > if password is correct Create the session (successful login)
       if (passwordCorrect) {
-        req.session.currentUser = user;  // Triggers creation of the session and cookie
+         // Create the session record and add it to the cookie
+        //  req.session is the object that will be saved in session
+        req.session.currentUser = user;
         res.redirect('/');
       }
       else {
-
+        // > else if password is incorrect, show an error
         res.render(
           "auth-views/login-form",
           { errorMessage: "Indicate username and password" }

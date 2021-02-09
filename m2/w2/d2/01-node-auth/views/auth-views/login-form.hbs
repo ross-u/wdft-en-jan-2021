@@ -1,5 +1,5 @@
-<form action='/auth/signup' method='POST'>
-  <h2>Sign Up</h2>
+<form action='/auth/login' method='POST'>
+  <h2>Login</h2>
 
   <label for=''>Username</label>
   <input type='text' name='username' minlength="4">
@@ -7,16 +7,9 @@
   <label for=''>Password</label>
   <input type='password' name='password' minlength="5">
 
-  <button type='submit'>Create account</button>
+  <button type='submit'>Login</button>
 </form>
 
-
-{{#if suggestions}}
-  Suggestions:
-  {{#each suggestions}}
-    <p>{{this}}</p>
-  {{/each}}
-{{/if}}
 
 {{!-- error message display: --}}
 
