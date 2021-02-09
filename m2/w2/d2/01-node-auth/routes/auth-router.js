@@ -77,7 +77,7 @@ authRouter.post("/signup", (req, res, next) => {
 
 
     })
-    .catch( (err) => console.log(err));
+    .catch( (err) => next(err) );
 
 
 
@@ -136,7 +136,7 @@ authRouter.post('/login', (req, res, next) => {
 
 
     })
-    .catch( (err) => console.log(err));
+    .catch( (err) => next(err));
   
 })
 
@@ -145,7 +145,9 @@ authRouter.post('/login', (req, res, next) => {
 // GET     /auth/logout
 authRouter.get('/logout', (req, res, next) => {
   req.session.destroy(function (err) {
-    if (err) {}
+    if (err) {
+      next(err)
+    }
     else {
       res.redirect('/auth/login')
     }
