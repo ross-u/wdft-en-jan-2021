@@ -141,6 +141,17 @@ authRouter.post('/login', (req, res, next) => {
 })
 
 
+// Destroys the existing session
+// GET     /auth/logout
+authRouter.get('/logout', (req, res, next) => {
+  req.session.destroy(function (err) {
+    if (err) {}
+    else {
+      res.redirect('/auth/login')
+    }
+  })
+})
+
 
 
 

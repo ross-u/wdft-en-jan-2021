@@ -12,6 +12,10 @@ const MongoStore = require('connect-mongo')(session);
 
 const indexRouter = require("./routes/index-router");
 const authRouter = require("./routes/auth-router");
+const siteRouter = require('./routes/site-router');
+
+const { isLoggedIn } = require('./utils/middleware');
+
 
 
 const app = express();
@@ -30,6 +34,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 
+// GET  /secret
+
 // MIDDLEWARE
 app.use(logger("dev"));
 app.use(express.json());
@@ -39,7 +45,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 // SESSION(COOKIES) MIDDLEWARE
-app.use( session({
+app.use(session({
   secret: process.env.SESSION_SECRET,
   // cookie: { maxAge: 3600000 * 1 },	// 1 hour
   resave: true,
@@ -54,6 +60,14 @@ app.use( session({
 // ROUTES
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+
+// HELPER MIDDLEWARE - Check if the user is logged in
+
+
+app.use("/", siteRouter);
+
+
+
 
 // 404 HANDLER
 // catch 404 and forward to error handler
