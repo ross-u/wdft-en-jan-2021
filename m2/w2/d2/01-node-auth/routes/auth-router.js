@@ -63,6 +63,8 @@ authRouter.post("/signup", (req, res, next) => {
       // User.create( { username: username, password: hashedPassword } )
       User.create({ username, password: hashedPassword })
         .then((createdUser) => {
+          // We also create the session for the user right after signup (singup + login in the same step!)
+          req.session.currentUser = user;  // Triggers creation of the session and cookie
           res.redirect('/');
         })
         .catch((err) => {

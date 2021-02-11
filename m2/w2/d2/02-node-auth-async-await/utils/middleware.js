@@ -7,17 +7,7 @@ function isLoggedIn (req, res, next) {
   }                                 
 }
 
-function isFede(req, res, next) {
-  if (req.session.currentUser.username === 'fede123') {
-    next()
-  }
-  else {
-    next(new Error('You are not Fede!'))
-  }
-}
-
 
 module.exports = {
-  isLoggedIn,
-  isFede
+  isLoggedIn
 }

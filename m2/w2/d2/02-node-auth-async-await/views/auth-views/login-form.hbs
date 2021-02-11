@@ -1,0 +1,20 @@
+<form action='/auth/login' method='POST'>
+  <h2>Login</h2>
+
+  <label for=''>Username</label>
+  <input type='text' name='username' minlength="4">
+
+  <label for=''>Password</label>
+  <input type='password' name='password' minlength="5">
+
+  <button type='submit'>Login</button>
+</form>
+
+
+{{!-- error message display: --}}
+
+{{#if errorMessage}}
+  <div class="error-message">
+    {{ errorMessage }}
+  </div>
+{{/if}}
