@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+.MovieCard {
+  border: 2px solid black;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+h1 {
+  padding: 30px;
+  border: 2px solid black;
+  background: lightcyan;
+}
+
+h2 {
+  padding: 20px 50px;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+button.btn-delete {
+  padding: 10px 25px;
+  font-size: 24px;
+  border-radius: 5px;
+}
