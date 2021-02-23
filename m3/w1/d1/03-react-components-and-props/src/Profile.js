@@ -1,6 +1,8 @@
 // rfce + Tab
 
-import React from 'react'
+import React from 'react';
+import './Profile.css';
+
 
 function Profile(props) {
   return (
