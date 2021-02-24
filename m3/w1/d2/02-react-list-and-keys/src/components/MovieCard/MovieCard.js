@@ -9,7 +9,7 @@ function MovieCard(props) {
       <p>Director: { props.oneMovie.director}</p>
       <p>Rating: {props.oneMovie.IMDbRating}</p>
       <button
-        onClick={() => { props.clickToDelete(props.oneMovie._id) }}
+        onClick={ () => { props.clickToDelete(props.oneMovie._id) } }
       >
         Delete
       </button>
