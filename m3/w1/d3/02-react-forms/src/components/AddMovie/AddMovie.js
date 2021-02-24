@@ -8,38 +8,32 @@ class AddMovie extends Component {
     IMDbRating: 5,
   }
 
-  handleTitleInput = (event) => {
-    const { value } = event.target;
-    this.setState({ title: value })
-  }  
-  handleDirectorInput = (event) => {
-    const { value } = event.target;
-    this.setState({ director: value })
-  }
-  handleOscarsCheckbox = (event) => {
-    const { checked } = event.target;
-    this.setState({ hasOscars: checked })
-  }
-  handleRatingInput = (event) => {
-    const { value } = event.target;
-    this.setState({ IMDbRating: value })
-  }
-
   handleInput = (event) => {
     let { value, name, type } = event.target;  //  value="asdfasdf"  name="director"
-
 
     if (type === 'checkbox') {
       value = event.target.checked;
     }
 
     this.setState( { [name]: value }  )
-  }  
+  }
+
+  handleSubmit = (event) => {
+    // Prevent page reload
+    event.preventDefault();
+
+    // Take the value from the `state` object, send it to MovieList
+    const newMovie = this.state;
+    this.props.addMovie(newMovie);
+
+    // Clear the form at the end, by resetting the `state`
+    this.setState({title: '', director: '', hasOscars: false, IMDbRating: 5})
+  }
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <h2>Add a movie:</h2>
           <br />
           
@@ -66,7 +60,8 @@ class AddMovie extends Component {
             type="checkbox" 
             name="hasOscars" 
             checked={this.state.hasOscars} 
-            onChange={this.handleInput}/>
+            onChange={this.handleInput}
+            />
           <br />
           
           <label>IMDb Rating:</label>
