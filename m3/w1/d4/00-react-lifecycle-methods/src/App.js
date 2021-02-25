@@ -19,10 +19,7 @@ class App extends Component {
 
   updateCurrentTime = () => this.setState({ currentTime: (new Date()).toUTCString() })  
 
-
   render() {
-    console.log('App ===== render');
-    
 
     return (
       <div className="App">
@@ -30,7 +27,6 @@ class App extends Component {
         <h1>Lifecycle methods</h1>
         <button onClick={this.updateCurrentTime}> UPDATE CURRENT TIME</button>
         <button onClick={this.toggleClock}> TOGGLE CLOCK</button>
-
 
         {
           this.state.showClock
