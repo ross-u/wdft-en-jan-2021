@@ -55,7 +55,6 @@ class Clock extends React.Component {
   }
 
 
-
   componentDidUpdate(prevProps, prevState) {
     // this method runs after every update
     // componentDidUpdate is used for comparing the previous state and props with the current

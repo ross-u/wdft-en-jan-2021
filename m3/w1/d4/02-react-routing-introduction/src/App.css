@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #352275;
+  padding: 20px 40px;
+}
+
+#navbar * {
+  list-style: none;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 20px;
+  font-size: 22px;
+  color: white;
+}
+
+div.nav-details > * {
+  display: inline-block;
+  color: royalblue;
+  font-size: 22px;
+}
+
+.selected-link {
+  text-shadow: 1px 0px 3px white;
+  color: #fff;
+  border-bottom: rgba(255, 255, 255, 0.639) solid 2px;
+  padding-bottom: 5px;
+}
