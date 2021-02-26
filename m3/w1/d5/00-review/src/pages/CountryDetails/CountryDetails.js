@@ -10,7 +10,7 @@ function CountryDetails(props) {
   const { cca3Code } = props.match.params;
 
   // Get the country by using the cca3
-  const country = countriesData.find((c) => c.cca3 === cca3Code);
+  const country = props.countriesData.find((c) => c.alpha3Code === cca3Code);
 
   return (
     <div className="col-7">
@@ -38,7 +38,10 @@ function CountryDetails(props) {
                     <li key={cca3}>
                       <Link to={`/${cca3}`}>
                         {/* Get the name of the country */}
-                        {countriesData.find((c) => c.cca3 === cca3).name}
+                        {
+                          props.countriesData.find((c) => c.alpha3Code === cca3)
+                            .name
+                        }
                       </Link>
                     </li>
                   );

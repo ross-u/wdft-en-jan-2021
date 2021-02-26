@@ -38,7 +38,17 @@ class App extends Component {
             <CountriesList countriesData={countries} />
 
             <Switch>
-              <Route path="/:cca3Code" component={CountryDetails} />
+              {/* <Route path="/:cca3Code" component={CountryDetails} /> */}
+
+              <Route
+                path="/:cca3Code"
+                render={(rrdProps) => {
+                  // rrdProps  is the object with react-router-dom props `location` `history` `match`
+                  return (
+                    <CountryDetails {...rrdProps} countriesData={countries} />
+                  );
+                }}
+              />
             </Switch>
           </div>
         </div>
