@@ -7,10 +7,12 @@ const cors = require('cors');
 
 require("dotenv").config();
 
+console.log(mongoose.Types.ObjectId.isValid("1af2f12333"))
+
 const app = express();
 
 const projectRouter = require("./routes/project.router");
-// const taskRouter = require('./routes/task.router');
+const taskRouter = require('./routes/task.router');
 // const router = require('./routes/index');
 
 // MONGOOSE CONNECTION
@@ -43,6 +45,6 @@ app.use(cors({
 
 // ROUTES MIDDLEWARE:
 app.use("/api", projectRouter);
-//  app.use('/api', taskRouter);
+ app.use('/api', taskRouter);
 
 module.exports = app;
