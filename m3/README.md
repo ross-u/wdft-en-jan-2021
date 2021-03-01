@@ -158,7 +158,7 @@ export default ComponentName;
 
 ##### Component passing the props (parent)
 
-From the parent component (component passing the props - `App`)
+From the parent component (component passing the props - `Example`)
 
 
 
