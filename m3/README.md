@@ -322,17 +322,25 @@ class CountriesList extends React.Component {
   }
 
 
+
   componentDidMount() {
     // Setting the state with the value passed through the props:
     this.setState({ countries: this.props.countriesData });
   }
 
-  render(){
+
+
+  render (){
+  
     return(
       <div className="CountriesList">
-        {this.state.countries.map((country) => {
-          return <div>{country.name}<div>
-        })}
+      
+        {
+	  this.state.countries.map((country) => {
+            return <div>{country.name}<div>
+          })
+	}
+	
       </div>
     )
   }
@@ -359,7 +367,6 @@ export default CountriesList;
 
 ```jsx
 import React from "react";
-
 import axios from 'axios';
 
 
@@ -369,25 +376,35 @@ class CountriesList extends React.Component {
   }
 
 
+
+
   componentDidMount() {
     // Setting the state with the data requested from an API:
     
-    // We use axios for making a request to an API server
+    // We use axios for making requests to APIs
     axios.get("https://restcountries.eu/rest/v2/all")
       .then((response) => {
+      
         const { data } =  response;
         this.setState({ countries: data });
+	
       })
       .catch((err) => console.log(err))
     
   }
 
-  render(){
+
+
+  render () {
     return(
       <div className="CountriesList">
-        {this.state.countries.map((country) => {
-          return <div>{country.name}<div>
-        })}
+      
+        {
+	  this.state.countries.map((country) => {
+            return <div>{country.name}<div>
+          })
+	}
+	
       </div>
     )
   }
