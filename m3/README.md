@@ -288,6 +288,115 @@ export default Card;
 <br>
 
 
+### Setting initial state of the component - using `componentDidMount()`
+
+
+
+<br>
+
+To set the state of the component with the data coming from the `props` or from an API to which a request has to be made we use `componentDidMount` higher order component.
+
+
+
+<br>
+
+
+
+##### Setting data from the `props` as the state of `class` component
+
+
+
+<br>
+
+
+
+##### `CountriesList.jsx`
+
+```jsx
+import React from "react";
+
+
+class CountriesList extends React.Component {
+  state = {
+    countries: []
+  }
+
+
+  componentDidMount() {
+    // Setting the state with the value passed through the props:
+    this.setState({ countries: this.props.countriesData });
+  }
+
+  render(){
+    return(
+      <div className="CountriesList">
+        {this.state.countries.map((country) => {
+          return <div>{country.name}<div>
+        })}
+      </div>
+    )
+  }
+}
+
+export default CountriesList;
+```
+
+
+
+<br>
+
+
+
+##### Setting `state` with the data requested from a API server :
+
+
+
+<br>
+
+
+
+##### `CountriesList.jsx`
+
+```jsx
+import React from "react";
+
+import axios from 'axios';
+
+
+class CountriesList extends React.Component {
+  state = {
+    countries: []
+  }
+
+
+  componentDidMount() {
+    // Setting the state with the data requested from an API:
+    
+    // We use axios for making a request to an API server
+    axios.get("https://restcountries.eu/rest/v2/all")
+      .then((response) => {
+        const { data } =  response;
+        this.setState({ countries: data });
+      })
+      .catch((err) => console.log(err))
+    
+  }
+
+  render(){
+    return(
+      <div className="CountriesList">
+        {this.state.countries.map((country) => {
+          return <div>{country.name}<div>
+        })}
+      </div>
+    )
+  }
+}
+
+export default CountriesList;
+```
+
+
 
 
 <br>
