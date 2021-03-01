@@ -418,6 +418,100 @@ export default CountriesList;
 
 <br>
 
+<br>
+
+
+
+<hr>
+
+
+
+<br>
+
+
+
+##### Passing props via `props.children`
+
+
+
+<br>
+
+
+
+##### `Example.js`
+
+```jsx
+import React from 'react';
+import Wrapper from './Wrapper';
+
+class Example extends React.Component {
+  
+ render() {
+   return(
+     <div>
+       <Wrapper>
+         <h1>Inside the wrapper</h1>
+         <p>
+           Content between the opening and the closing tags of a component
+           can be accessed inside of the component via `props.children`,
+           for example inside of Wrapper component this 2 tags, `h1` and `p` ,
+           can be shown using `props.children`
+         </p>
+       </Wrapper>
+     </div>
+   )
+  }
+}
+
+export default Example;
+```
+
+
+
+
+
+<br>
+
+
+
+##### `Wrapper.js` - as a `class` component
+
+```jsx
+import React from 'react';
+
+class Wrapper extends React.Component {
+  
+ render() {
+   return(
+     <section className="Wrapper">
+       { this.props.children }
+     </section>
+   )
+  }
+}
+
+export default Wrapper;
+```
+
+
+
+##### `Wrapper.js` - as a `function` component
+
+```jsx
+import React from 'react';
+
+function Wrapper (props) {
+   return(
+     <section className="Wrapper">
+       { props.children }
+     </section>
+   )
+}
+
+export default Wrapper;
+```
+
+<br>
 
 
 
