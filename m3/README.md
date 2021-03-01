@@ -80,12 +80,19 @@ or just shorter:
 npm start
 ```
 
+<br>
+
+<hr>
 
 <br>
 
-### Create a `class` component
+### Component syntax
 
+<br>
 
+##### `class` component
+
+<br>
 
 ```jsx
 import React from 'react';
@@ -108,11 +115,12 @@ export default ComponentName;
 
 
 
+
 <br>
 
+##### `function` component
 
-
-### Create a function component
+<br>
 
 
 
@@ -134,7 +142,9 @@ export default ComponentName;
 
 
 
+<br>
 
+<hr>
 
 <br>
 
