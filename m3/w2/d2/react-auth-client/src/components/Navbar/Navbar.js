@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withAuth } from './../context/auth-context';
+import { withAuth } from './../../context/auth-context';
 
 class Navbar extends Component {
   render() {
-    // const { user, logout, isLoggedin } = this.props;
+
+    const { user, logout, isLoggedIn } = this.props;
+
+
     return (
       <nav className="navbar">
         <Link to={'/'} id='home-btn'>
           <h4>Home</h4>
         </Link>
         {
-          this.props.isLoggedIn
+          isLoggedIn
             ? (
               <>
-                <p>username: { this.props.user.username}</p>
-                <button>Logout</button>
+                <p>username: { user.username}</p>
+                <button onClick={logout}>Logout</button>
               </>
             )
             : (

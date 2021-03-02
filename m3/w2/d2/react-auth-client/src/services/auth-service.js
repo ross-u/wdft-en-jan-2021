@@ -9,6 +9,8 @@ class AuthService {
     });
   }
 
+  // authService methods only make axios calls to the API
+
   signup = (username, password) => {
     const pr = this.auth
       .post("/auth/signup", { username, password })

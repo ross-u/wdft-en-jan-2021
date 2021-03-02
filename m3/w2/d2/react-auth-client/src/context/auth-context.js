@@ -21,9 +21,41 @@ class AuthProvider extends React.Component {
       .catch( (err) => this.setState({ isLoggedIn: false, user: null, isLoading: false }));
   }
 
-  login = () => { }
-  signup = () => { }
-  logout = () => {}
+    // AuthProvider methods make API call via authServices, and update the AuthProvider state\
+    // shared with the entire application
+
+  login = (username, password) => {
+    authServices.login(username, password)
+      .then((user) => {
+        this.setState({ isLoggedIn: true, isLoading: false, user: user })
+      })
+      .catch((err) => {
+        this.setState({ isLoggedIn: false, isLoading: false, user: null })
+      });
+
+  }
+
+  signup = (username, password) => {
+    // Make a /auth/signup request to the server API
+    authServices.signup(username, password)
+      .then((user) => {
+        this.setState({ isLoggedIn: true, isLoading: false, user: user })
+      })
+      .catch((err) => {
+        this.setState({ isLoggedIn: false, isLoading: false, user: null })
+      });
+    
+
+    // Update the state of the AuthProvider
+  }
+
+  logout = () => {
+    authServices.logout()
+      .then( () => this.setState({ isLoggedIn: false, user: null }) )
+      .catch( (err) => console.log(err));
+      
+     
+  }
 
 
   render() {
