@@ -1,0 +1,45 @@
+.App {
+}
+
+.navbar {
+  background: #2C5F90;
+  box-shadow: 0px 2px 5px 3px #0223452e;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+  text-align: left;
+}
+
+.article-preview {
+  border-bottom: 2px solid #7f7b92;
+  box-shadow: 0px -1px 8px 3px #0223452e;
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 10px 30px;
+  text-align: center;
+  min-height: 260px;
+  position: relative;
+}
+
+div.fade {
+  height: 76px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */}
+
+.article-preview h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 36px;
+}
+
+.btn-more {
+  padding: 4px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
